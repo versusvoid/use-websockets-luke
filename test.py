@@ -20,6 +20,8 @@ class Handler(object):
             record['score'] = 0.0
 
     def loadScores(self):
+        self.scoresFile = open('scores.csv', 'a')
+
         f = open('scores.csv', 'r')
         for l in f:
             id, score = l.strip().split(',')
@@ -28,7 +30,6 @@ class Handler(object):
             self.ids[id]['score'] += score
         f.close()
 
-        self.scoresFile = open('scores.csv', 'a')
 
     def acceptableId(self, id):
         return id in self.ids
