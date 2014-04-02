@@ -2,14 +2,14 @@
     <h2 style="text-align:center">Welcome to<br />North Countries Universities<br />Mathematical Competition</h2>
     <br />
     <div class="alert alert-danger" ng-show="error">
-        <p>{{ error.reason }}</p>
+        <p>{{ error }}</p>
     </div>
     <div class="alert alert-info" ng-show="connecting">
         <p>Загрузка...</p>
     </div>
     <form role="form" ng-hide="connecting">
         <div class="form-group">
-            <input type="password" class="form-control center-block" style="width: 220px;" ng-model="address" placeholder="Введите адрес">
+            <input type="password" class="form-control center-block" style="width: 220px;" ng-model="address" ng-change="addressChanged()" placeholder="Введите адрес">
         </div>
         <div class="form-group">
             <button class="btn btn-primary center-block" style="width: 70px;" ng-click="connect()">Загрузить</button>
